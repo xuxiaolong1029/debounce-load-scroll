@@ -14,7 +14,6 @@ npm i debounce-load-scroll
 
 ```ts
 // main.ts
-// 指令埋点上报
 import { createApp } from "vue";
 import App from "./App.vue";
 import debounceLoadScroll from 'debounce-load-scroll'
