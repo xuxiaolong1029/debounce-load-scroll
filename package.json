@@ -1,6 +1,6 @@
 {
   "name": "debounce-load-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "带防抖的无限滚动加载数据的指令",
   "main": "index.js",
   "scripts": {
