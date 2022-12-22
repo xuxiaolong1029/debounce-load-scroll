@@ -10,14 +10,16 @@ export default (app:any) => {
     app.directive('debounceLoadScroll',{
         mounted(el:any, binding:any) {
             let className = binding.value.className
+            let top = binding.value.top
             let direction = Object.keys(binding.modifiers).length?binding.modifiers.down?'down':'up':'-'
             let preDistance = 100000
             const selectWrap = className?el.querySelector(className):el
             selectWrap.handler = (event:any) => {
-                let sign = 0;
+                let sign = top||0;
                 let {scrollHeight,scrollTop,clientHeight} = event.target
                 let scrollDistance = scrollHeight - scrollTop - clientHeight-1
                 if (scrollDistance <= sign&&preDistance>scrollDistance) {
+                    console.log(scrollDistance)
                     preDistance = scrollDistance
                     debounce(()=>{
                         if(typeof binding.value==='function'){
